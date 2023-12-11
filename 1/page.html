@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알퍼</title>
+  <style>
+    body {
+      background-color: beige;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+    }
+
+    #alper {
+      font-weight: bolder; 
+      color:  black; 
+      font-size: 80px; 
+      display: inline-block; 
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: rgb(255, 255, 255);
+    }
+
+    #menubar {
+      text-align: center;
+      padding: 0;
+    }
+
+    #menubar li {
+      display: inline;
+      font-size: xx-large;
+      padding: 10px 20px; 
+      margin: 100px;
+    }
+
+    #menubar li a {
+      padding:40px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: x-large;
+      color: inherit;
+    }
+
+    #login {
+      width: 300px;
+      float: left;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"] {
+      width: calc(100% - 12px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      background-color: rgba(54, 54, 54, 0.521);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #616161;
+    }
+
+    .signup {
+      text-decoration: none;
+      color: blue;
+    }
+
+    footer {
+    background-color: white;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    }
+
+    #foot {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #foot li {
+      display: inline-block;
+      font-size: 15px;
+      margin: 0 50px;
+    }
+
+    #foot li a {
+      text-decoration: none;
+      color: black;
+      padding: 5px 10px;    
+    }
+  </style>
+</head>
+<body>
+
+  <header >
+    <img src="Photo/group.png" height="100" style="margin-left: 10px;">
+    <p id="alper">AlPer</p>
+  </header>
+  
+  <nav>
+    <ul id="menubar">
+      <li><a href="alper.html" target="content">알퍼</a></li>
+      <li><a href="week.html" target="content">주휴수당 계산기</a></li>
+      <li><a href="severance.html" target="content">퇴직금 계산기</a></li>
+      <li><a href="http://map.naver.com/p/" target="content">주변 알바자리</a></li>
+  </nav>
+  <div>
+    <iframe src="alper.html"name="content" style="float:left; width: 80%; height: 500px; border: none;"></iframe>
+  </div>
+  <div id="login">
+    <h1>Login</h1>
+    <form name="input" action="login.jsp" method="get">
+        아이디: <input type="text" name="user"><br>
+        비밀번호: <input type="password" name="pass"><br>
+        <input type="submit" value="입력"><br>
+        <input type="reset" value="초기화"><br>
+        <h5><a class="signup" href="signup.html">계정이 없으신가요?</a></h5>
+    </form>
+  </div>
+  <footer>
+    <ul id="foot">
+      <li><a href="">전체서비스</a></li>
+      <li><a href="">이용약관</a></li>
+      <li><a href="">개인정보처리방침</a></li>
+      <li><a href="support.html">문의하기</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

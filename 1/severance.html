@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>퇴직금 계산기</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      margin-top: 20%;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    p {
+      margin-bottom: 10px;
+    }
+    
+    #result {
+      margin-top: 20px;
+    }
+
+    input[type="date"] {      
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="number"],
+    input[type="text"] {      
+      padding: 9px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="button"] {      
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>퇴직금 계산기</h1>
+  <form id="retirementCalculator">
+    <p>입사일: <input type="date" id="startDate" name="startDate" required></p>
+    <p>퇴사일: <input type="date" id="endDate" name="endDate" required></p>
+    <p>월급: <input type="number" id="monthlySalary" name="monthlySalary" required></p>
+    <input type="button" value="계산" onclick="calculateRetirementPay()">
+    <p>퇴직금:</p>
+    <input type="text" id="retirementPay" disabled>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateRetirementPay() {
+      const startDate = new Date(document.getElementById('startDate').value);
+      const endDate = new Date(document.getElementById('endDate').value);
+      const monthlySalary = parseFloat(document.getElementById('monthlySalary').value);
+      
+      const monthsWorked = (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth();
+
+      const retirementPay = monthsWorked * monthlySalary;
+      document.getElementById('result').value = `${retirementPay} 원`;
+    }
+  </script>
+</body>
+</html>
